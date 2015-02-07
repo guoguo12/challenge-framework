@@ -1,0 +1,49 @@
+html, body {
+    background-color: #DDD;
+    color: #444;
+    font-family: "Open Sans", "Arial", sans-serif;
+    padding-bottom: 30px;
+}
+
+#main-container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #9AB6FF;
+    text-decoration: none;    
+}
+
+a:hover {
+    color: #577AD5;
+}
+
+#header {
+    margin: 5px 0px 5px 0px;
+    color: #AAA;
+}
+
+#test-results {
+    margin-top: 5px;
+}
+
+.error-text {
+    color: red;
+}
+
+span.result {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 180%;
+}
+
+.navbar {
+    border-radius: 0px;
+}
+
+textarea {
+    font-family: "Source Code Pro", monospace;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

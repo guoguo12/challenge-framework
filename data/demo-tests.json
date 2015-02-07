@@ -1,0 +1,22 @@
+{ "demos":
+[
+{  
+   "type":"must-contain",
+   "structexp":"for.*if|if.*for",
+   "success":"You used a for loop and an if statement.",
+   "failure":"You must use a for loop and an if statement."
+},
+{  
+   "type":"must-not-contain",
+   "structexp":"while",
+   "success":"You didn't use a while loop.",
+   "failure":"You may not use a while loop."
+},
+{  
+   "type":"must-match",
+   "structexp":".*(for .*(if.*).*).*",
+   "success":"You used a for loop containing an if statement.",
+   "failure":"You must use a for loop, inside of which should be an if statement."
+}
+]
+}
