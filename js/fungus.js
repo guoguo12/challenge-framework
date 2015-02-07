@@ -45,7 +45,7 @@ See the project description (README.md) for more details.
 */
 fungus.decompose = function(code) {
   var result = fungus.decomposeNode(esprima.parse(code));
-  console.log('Parsed structexp: ' + result);
+  // console.log('Parsed structexp: ' + result);
   return result;
 }
 
@@ -65,11 +65,11 @@ fungus.decomposeNode = function(node) {
     }
   }
   if (validBlockElements[node.type] !== undefined) {
-    console.log('Found block element: ' + node.type);
+    // console.log('Found block element: ' + node.type);
     return '(' + validBlockElements[node.type] + fungus.decomposeForest(node.body.body) + ')';
   }
   if (validNonBlockElements[node.type] !== undefined) {
-    console.log('Found non-block element: ' + node.type);
+    // console.log('Found non-block element: ' + node.type);
     return validNonBlockElements[node.type];
   }
   return '';
