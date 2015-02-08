@@ -9,7 +9,8 @@ var fungus = {};
 
 // If statements are handled separately since they have a different structure
 var validBlockElements = {'ForStatement': 'for',
-                          'WhileStatement': 'while'}
+                          'WhileStatement': 'while',
+                          'FunctionDeclaration': 'function'}
 
 var validNonBlockElements = {'VariableDeclaration': 'var'}
 
@@ -44,7 +45,9 @@ Decomposes the given JS code string into a structural expression.
 See the project description (README.md) for more details.
 */
 fungus.decompose = function(code) {
-  var result = fungus.decomposeNode(esprima.parse(code));
+  var programNode = esprima.parse(code);
+  console.log(programNode);
+  var result = fungus.decomposeNode(programNode);
   console.log('Parsed structexp: ' + result);
   return result;
 }
