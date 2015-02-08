@@ -55,6 +55,6 @@ For instance, if we want to make sure the student used an if statement enclosed 
 
 [Note: with standard regex we would have to escape parentheses (e.g. `\\(for\\)`). My challenge framework code is written so that parentheses are automatically escaped.]
 
-### Live Demo
+### Proof of Concept
 
 That's all there is to it! To see all of this in action, check out my live demo [here](https://guoguo12.github.io/challenge-framework/). (Click "Submit for Testing" to run all tests.)
