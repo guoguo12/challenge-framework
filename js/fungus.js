@@ -10,7 +10,8 @@ var fungus = {};
 // If statements are handled separately since they have a different structure
 var validBlockElements = {'ForStatement': 'for',
                           'WhileStatement': 'while',
-                          'FunctionDeclaration': 'function'}
+                          'FunctionDeclaration': 'function',
+                          'FunctionExpression': 'function'}
 
 var validNonBlockElements = {'VariableDeclaration': 'var'}
 
@@ -60,6 +61,7 @@ fungus.decomposeNode = function(node) {
     return fungus.trim(fungus.decomposeForest(node.body));
   }
   if (node.type === 'IfStatement') {
+    console.log('Found if statement');
     var result = '(if' + fungus.decomposeForest(node.consequent.body);
     if (node.alternate) {
       return result + ') (else' + fungus.decomposeForest(node.alternate.body) + ')';
