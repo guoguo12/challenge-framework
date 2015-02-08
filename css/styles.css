@@ -20,8 +20,13 @@ a:hover {
 }
 
 #header {
+<<<<<<< HEAD
     margin: 5px 0px 5px 0px;
     color: #AAA;
+=======
+    margin: 5px 0px 5px 15px;
+    color: #DDD;
+>>>>>>> master
 }
 
 #test-results {
