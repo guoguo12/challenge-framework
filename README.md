@@ -24,5 +24,25 @@ for (var n = 65; n < 91; n++) {
 }
 ```
 
-The corresponding structexp is `(for (if))`. It tells us that the student's code contains an if statement inside a for statement.
-
+The corresponding structexp is `(for (if))`. It tells us that the student's code contains an if statement inside a for statement. Below is another piece of code. Can you figure out what the corresponding structexp is?
+```JavaScript
+function append(p, n) {
+  while (true) {
+    if (p.next !== null) {
+      break;
+    }
+    p = p.next;
+  }
+  p.next = n;
+}
+```
+You were probably able to figure it out based on the first example &mdash; it's `(function (while (if)))`. Our DSL can also represent variable assignments and if-else statements. For example,
+```JavaScript
+var health = getShipHealth();
+if (health < 0) {
+  var message = "One last explosion marks your fate as your ship is torn apart.";
+} else {
+  var message = "Your ship has survived.";
+}
+```
+produces the structexp `var (if var) (else var)`.
