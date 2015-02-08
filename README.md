@@ -36,7 +36,7 @@ function append(p, n) {
   p.next = n;
 }
 ```
-You were probably able to figure it out based on the first example &mdash; it's `(function (while (if)))`. Our DSL can also represent variable assignments and if-else statements. For example,
+You were probably able to figure it out based on the first example &mdash; it's `(function (while (if)))`. Our DSL can also represent variable declarations and if-else statements. For example,
 ```JavaScript
 var health = getShipHealth();
 if (health < 0) {
