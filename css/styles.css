@@ -20,8 +20,8 @@ a:hover {
 }
 
 #header {
-    margin: 5px 0px 5px 0px;
-    color: #AAA;
+    margin: 5px 0px 5px 15px;
+    color: #DDD;
 }
 
 #test-results {
