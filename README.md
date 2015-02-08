@@ -57,7 +57,7 @@ For instance, if we want to make sure the student used an if statement enclosed 
 
 ### Proof of Concept
 
-That's all there is to it! To see all of this in action, check out my live demo [here](https://guoguo12.github.io/challenge-framework/). Here are some things you can try:
+That's all there is to it! To see all of this in action, check out my live demo [here](https://guoguo12.github.io/challenge-framework/). Some things you can try:
 * Click "Submit for Testing" to run all tests.
 * Modify the code to make all three tests pass.
 * Add your own tests using the tool in the bottom-right corner.
