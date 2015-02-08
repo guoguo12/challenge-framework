@@ -61,3 +61,11 @@ That's all there is to it! To see all of this in action, check out my live demo 
 * Click "Submit for Testing" to run all tests.
 * Modify the code to make all three tests pass.
 * Add your own tests using the tool in the bottom-right corner.
+
+## Implementation Details
+
+The online demo has two main parts:
+* [js/fungus.js](https://github.com/guoguo12/challenge-framework/blob/master/js/fungus.js) &ndash; responsible for decomposing pieces of JavaScript code into structural expressions.
+* [js/app.js](https://github.com/guoguo12/challenge-framework/blob/master/js/app.js) and [index.html](https://github.com/guoguo12/challenge-framework/blob/master/index.html) &ndash; logic for the live demo
+
+The main libraries used are [AngularJS](http://angularjs.org) and [Esprima](http://esprima.org). I also used [Bootstrap](http://getbootstrap.com/), [jQuery](https://jquery.com/), and [Animate.css](https://daneden.github.io/animate.css/) to quickly make my demo look visually appealing.
