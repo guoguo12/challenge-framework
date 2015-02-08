@@ -9,13 +9,9 @@ var fungus = {};
 
 // If statements are handled separately since they have a different structure
 var validBlockElements = {'ForStatement': 'for',
-<<<<<<< HEAD
-                          'WhileStatement': 'while'}
-=======
                           'WhileStatement': 'while',
                           'FunctionDeclaration': 'function',
                           'FunctionExpression': 'function'}
->>>>>>> master
 
 var validNonBlockElements = {'VariableDeclaration': 'var'}
 
@@ -50,15 +46,10 @@ Decomposes the given JS code string into a structural expression.
 See the project description (README.md) for more details.
 */
 fungus.decompose = function(code) {
-<<<<<<< HEAD
-  var result = fungus.decomposeNode(esprima.parse(code));
-  // console.log('Parsed structexp: ' + result);
-=======
   var programNode = esprima.parse(code);
   console.log(programNode);
   var result = fungus.decomposeNode(programNode);
   console.log('Parsed structexp: ' + result);
->>>>>>> master
   return result;
 }
 
@@ -70,10 +61,7 @@ fungus.decomposeNode = function(node) {
     return fungus.trim(fungus.decomposeForest(node.body));
   }
   if (node.type === 'IfStatement') {
-<<<<<<< HEAD
-=======
     console.log('Found if statement');
->>>>>>> master
     var result = '(if' + fungus.decomposeForest(node.consequent.body);
     if (node.alternate) {
       return result + ') (else' + fungus.decomposeForest(node.alternate.body) + ')';
@@ -82,19 +70,11 @@ fungus.decomposeNode = function(node) {
     }
   }
   if (validBlockElements[node.type] !== undefined) {
-<<<<<<< HEAD
-    // console.log('Found block element: ' + node.type);
-    return '(' + validBlockElements[node.type] + fungus.decomposeForest(node.body.body) + ')';
-  }
-  if (validNonBlockElements[node.type] !== undefined) {
-    // console.log('Found non-block element: ' + node.type);
-=======
     console.log('Found block element: ' + node.type);
     return '(' + validBlockElements[node.type] + fungus.decomposeForest(node.body.body) + ')';
   }
   if (validNonBlockElements[node.type] !== undefined) {
     console.log('Found non-block element: ' + node.type);
->>>>>>> master
     return validNonBlockElements[node.type];
   }
   return '';
