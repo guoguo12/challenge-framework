@@ -46,3 +46,15 @@ if (health < 0) {
 }
 ```
 produces the structexp `var (if var) (else var)`.
+
+### So What?
+
+Now for the fun part: after we've turned the student's code into a structural expression, we simply use [regex](https://en.wikipedia.org/wiki/Regular_expression) to test if the student's code matches our desired structure.
+
+For instance, if we want to make sure the student used an if statement enclosed in a for loop, we check that the structrual expression matches `(for .*(if .*).*)`. (We use `.*` a lot because the student could have other structural elements besides the for loop and if statement.)
+
+[Note: with standard regex we would have to escape parentheses (e.g. `\\(for\\)`). My challenge framework code is written so that parentheses are automatically escaped.]
+
+### Live Demo
+
+That's all there is to it! To see all of this in action, check out my live demo [here](https://guoguo12.github.io/challenge-framework/). (Click "Submit for Testing" to run all tests.)
