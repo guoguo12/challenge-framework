@@ -49,7 +49,7 @@ produces the structexp `var (if var) (else var)`.
 
 ### So What?
 
-Now for the fun part: after we've turned the student's code into a structural expression, we simply use [regex](https://en.wikipedia.org/wiki/Regular_expression) to test if the student's code matches our desired structure.
+Now for the fun part: after we've turned the student's code into a structural expression, we simply use **regular expressions** (regex) to test if the student's code matches our desired structure.
 
 For instance, if we want to make sure the student used an if statement enclosed in a for loop, we check that the structrual expression matches `(for .*(if .*).*)`. (We use `.*` a lot because the student could have other structural elements besides the for loop and if statement.)
 
