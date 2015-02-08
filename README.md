@@ -69,3 +69,13 @@ The online demo has two main parts:
 * [js/app.js](https://github.com/guoguo12/challenge-framework/blob/master/js/app.js) and [index.html](https://github.com/guoguo12/challenge-framework/blob/master/index.html) &ndash; logic for the live demo
 
 The main libraries used are [AngularJS](http://angularjs.org) and [Esprima](http://esprima.org). I also used [Bootstrap](http://getbootstrap.com/), [jQuery](https://jquery.com/), and [Animate.css](https://daneden.github.io/animate.css/) to quickly make my demo look visually appealing.
+
+### Compatibility
+
+I'm using newer versions of jQuery and AngularJS, so the live demo doesn't work with older browsers like IE 8. That said, the core of the framework (`fungus.js`) *does* work in IE 8, so implementing a real version of this framework would mostly require changes to the UI logic.
+
+### Auto-running Tests
+
+It was requested that tests run automatically when the code is changed. I have decided not to implement this feature because I think it would be too annoying for users. When I was playing around with Khan Academy's ProcessingJS platform, it bothered me that my code kept running when I wasn't done typing. (I made [this](https://www.khanacademy.org/computer-programming/new-program/5450142823219200), by the way.)
+
+That said, implementing this feature is straightforward &mdash; we just attach an appropriate [ngChange directive](https://docs.angularjs.org/api/ng/directive/ngChange) to the `textarea` element.
