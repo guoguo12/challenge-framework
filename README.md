@@ -79,3 +79,24 @@ I'm using newer versions of jQuery and AngularJS, so the live demo doesn't work 
 It was requested that tests run automatically when the code is changed. I have decided not to implement this feature because I think it would be too annoying for users. When I was playing around with Khan Academy's ProcessingJS platform, it bothered me that my code kept running when I wasn't done typing. (I made [this](https://www.khanacademy.org/computer-programming/new-program/5450142823219200), by the way.)
 
 That said, implementing this feature is straightforward &mdash; we just attach an appropriate [ngChange directive](https://docs.angularjs.org/api/ng/directive/ngChange) to the `textarea` element.
+
+## API Documentation
+To use the testing library on a page, simply download `esprima.js` and `fungus.js` and include them in your HTML file:
+```HTML
+<script src="esprima.js"></script>
+<script src="fungus.js"></script>
+```
+Our API only has one method, `fungus.test(type, structexp, code)`. Its parameters are:
+
+* *type* &ndash; indicates what sort of test to apply (either "must-match", "must-contain", "must-not-match", or "must-not-contain")
+* *structexp* &ndash; structural expression to test (as outlined above)
+* *code* &ndash; the student's code
+
+
+## Still Not Convinced?
+Here are some more reasons the DSL outlined above is better than using just an API:
+
+1. **Easy to read and modify**: Tests are strings, rather than pieces of code.
+2. **Easy to learn**: Structural expressions look like Lisp S-expressions, and structexp symbols have the same names as their corresponding JavaScript keywords (`if`, `else`, `var`, etc.).
+3. **Extensible**: More symbols can easily be introduced to cover other JS features or keywords (like `break`, `continue`, and so on).
+4. **Programmable**: What if we wanted to test for 100 nested for loops? We could manually type out `(for (for (for ... )))`. Or we could imagine the existence of a programmable templating device, or **macro**, that could do this for us. This hasn't been implemented yet, but it might look something like this: `[nested 100 for]`.
