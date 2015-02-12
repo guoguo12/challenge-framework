@@ -14,8 +14,8 @@ Created for Khan Academy.
 	- [API Documentation](#docs)
 	- [Still Not Convinced?](#still)
 
-## The Problem
 <a name="prob"/>
+## The Problem
 
 > "We want to analyze student-generated JavaScript code (for our CS platform: https://www.khanacademy.org/cs) and determine if certain aspects of their code is written as expected."
 
@@ -24,8 +24,8 @@ The solution must include three kinds of testing methods:
 * **Blacklist**: "The program must not use a while loop."
 * **Structural analysis**: "The program must use a for loop, inside of which should be an if statement."
 
-## The Solution
 <a name="sol"/>
+## The Solution
 
 Instead of building a JavaScript API for testing, we're going to create a whole new [domain-specific language](https://en.wikipedia.org/wiki/Domain-specific_language) (DSL) for respresenting how pieces of JS code are structured. Our challenge framework will parse the student's code (using [Esprima](http://esprima.org)) and convert it into a **structural expression** (or *structexp*).
 
@@ -62,8 +62,8 @@ if (health < 0) {
 ```
 produces the structexp `var (if var) (else var)`.
 
-### So What?
 <a name="so"/>
+### So What?
 
 Now for the fun part: after we've turned the student's code into a structural expression, we simply use **regular expressions** (regex) to test if the student's code matches our desired structure.
 
@@ -71,16 +71,16 @@ For instance, if we want to make sure the student used an if statement enclosed 
 
 [Note: With standard regex we would have to escape parentheses (e.g. `\\(for\\)`). My challenge framework code is written so that parentheses are automatically escaped.]
 
-### Proof of Concept
 <a name="proof"/>
+### Proof of Concept
 
 That's all there is to it! To see all of this in action, check out my live demo [here](https://guoguo12.github.io/challenge-framework/). Some things you can try:
 * Click "Submit for Testing" to run all tests.
 * Modify the code to make all three tests pass.
 * Add your own tests using the tool in the bottom-right corner.
 
-## Implementation Details
 <a name="imple"/>
+## Implementation Details
 
 The online demo has two main parts:
 * [js/fungus.js](https://github.com/guoguo12/challenge-framework/blob/master/js/fungus.js) &ndash; responsible for decomposing pieces of JavaScript code into structural expressions.
@@ -90,20 +90,20 @@ The online demo has two main parts:
 
 The main libraries used are [AngularJS](http://angularjs.org) and [Esprima](http://esprima.org). I also used [Bootstrap](http://getbootstrap.com/), [jQuery](https://jquery.com/), and [Animate.css](https://daneden.github.io/animate.css/) to quickly make my demo look visually appealing.
 
-### Compatibility
 <a name="compat"/>
+### Compatibility
 
 I'm using newer versions of jQuery and AngularJS, so the live demo doesn't work with older browsers like IE 8. That said, the core of the framework (`fungus.js`) *does* work in IE 8, so implementing a real version of this framework would mostly require changes to the UI logic.
 
-### Auto-running Tests
 <a name="auto"/>
+### Auto-running Tests
 
 It was requested that tests run automatically when the code is changed. I have decided not to implement this feature because I think it would be too annoying for users. When I was playing around with Khan Academy's ProcessingJS platform, it bothered me that my code kept running when I wasn't done typing. (I made [this](https://www.khanacademy.org/computer-programming/new-program/5450142823219200), by the way.)
 
 That said, implementing this feature is straightforward &mdash; we just attach an appropriate [ngChange directive](https://docs.angularjs.org/api/ng/directive/ngChange) to the `textarea` element.
 
-## API Documentation
 <a name="docs"/>
+## API Documentation
 
 To use the testing library on a page, simply download `esprima.js` and `fungus.js` and include them in your HTML file:
 ```HTML
@@ -118,8 +118,8 @@ Our API only has one method, `fungus.test(type, structexp, code)`. Its parameter
 
 `fungus.test()` returns a simple boolean value indicating whether or not the code passed the specified test.
 
-## Still Not Convinced?
 <a name="still"/>
+## Still Not Convinced?
 
 Here are some more reasons the DSL outlined above is better than using just an API:
 
