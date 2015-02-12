@@ -1,6 +1,19 @@
 # Building a Challenge Framework
 Created for Khan Academy.
 
+## Table of Contents
+
+- [Building a Challenge Framework](#)
+	- [The Problem](#)
+	- [The Solution](#)
+		- [So What?](#)
+		- [Proof of Concept](#)
+	- [Implementation Details](#)
+		- [Compatibility](#)
+		- [Auto-running Tests](#)
+	- [API Documentation](#)
+	- [Still Not Convinced?](#)
+
 ## The Problem
 
 > "We want to analyze student-generated JavaScript code (for our CS platform: https://www.khanacademy.org/cs) and determine if certain aspects of their code is written as expected."
