@@ -68,6 +68,8 @@ The online demo has two main parts:
 * [js/fungus.js](https://github.com/guoguo12/challenge-framework/blob/master/js/fungus.js) &ndash; responsible for decomposing pieces of JavaScript code into structural expressions.
 * [js/app.js](https://github.com/guoguo12/challenge-framework/blob/master/js/app.js) and [index.html](https://github.com/guoguo12/challenge-framework/blob/master/index.html) &ndash; logic for the live demo
 
+**fungus.js** is also a standalone testing library that works with structexp (see below for documentation).
+
 The main libraries used are [AngularJS](http://angularjs.org) and [Esprima](http://esprima.org). I also used [Bootstrap](http://getbootstrap.com/), [jQuery](https://jquery.com/), and [Animate.css](https://daneden.github.io/animate.css/) to quickly make my demo look visually appealing.
 
 ### Compatibility
@@ -92,6 +94,7 @@ Our API only has one method, `fungus.test(type, structexp, code)`. Its parameter
 * *structexp* &ndash; structural expression to test (as outlined above)
 * *code* &ndash; the student's code
 
+`fungus.test()` returns a simple boolean value indicating whether or not the code passed the specified test.
 
 ## Still Not Convinced?
 Here are some more reasons the DSL outlined above is better than using just an API:
